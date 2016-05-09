@@ -27,7 +27,7 @@ class Product(models.Model):
             """ %(header_label_list[0], header_label_list[1], header_label_list[2], header_label_list[3], header_label_list[4])
             ## Check for low stock products
             product_obj  = self.pool.get('product.product')
-            product_ids  = product_obj.search(cr, uid, [('active', '=', True), ('sale_ok', '=', True), ('default_code', '!=', False), ('mage_status', '=', '1')])
+            product_ids  = product_obj.search(cr, uid, [('active', '=', True), ('sale_ok', '=', True), ('default_code', '!=', False)])
             for product in product_obj.browse(cr, uid, product_ids):
                 product_sku = product.default_code
                 if not product_sku or product_sku == '':

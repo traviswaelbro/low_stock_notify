@@ -5,7 +5,7 @@
     'summary' : '',
     'description' : '',
     'category' : 'Sales Management',
-    'depends' : ['base', 'product', 'mage2odoo'],
+    'depends' : ['base', 'mail', 'product'],
     'data':[
     			'data/email_template.xml',
                 'views/product_template.xml',
