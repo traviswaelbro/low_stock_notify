@@ -12,7 +12,7 @@ class Product(models.Model):
     def send_low_stock_via_email(self, cr, uid, context=None):
         header_label_list=["SKU", "Name", "Qty On Hand","Qty Incoming","Low Stock Qty"]
         ## Get email template
-        template_obj = self.pool.get('email.template')
+        template_obj = self.pool.get('mail.template')
         template_ids = template_obj.search(cr, uid, [('name', '=', 'Low Stock Automated Report')])
         template     = template_obj.browse(cr, uid, template_ids)
         if template:
